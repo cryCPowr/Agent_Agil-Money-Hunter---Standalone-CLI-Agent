@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta:__legacy__"
+
+[project]
+name = "agent-agil"
+version = "0.1.0"
+description = "Agent_Agil (Money-Hunter) — autonomous money-making agent framework"
+authors = [{name = "Farhan Agil"}]
+license = {text = "MIT"}
+requires-python = ">=3.11"
+readme = "README.md"
+keywords = ["agent", "ai", "money", "niche", "research"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+    "rich>=13.0",
+    "questionary>=2.0",
+    "requests>=2.31",
+    "httpx>=0.27",
+    "click>=8.0",
+]
+
+[project.scripts]
+agent-agil = "agent_agil.cli.main:cli_entry"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"agent_agil" = ["config/*.md", "config/*.yaml", "config/*.json", "config/.env"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

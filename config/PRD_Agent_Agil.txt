@@ -1,0 +1,121 @@
+PRODUCT REQUIREMENTS DOCUMENT
+Agent: "Agent-Agil"
+Platform target: Hermes Agent (Nous Research) — agentskills.io compatible
+Versi: 0.01
+==========================================================================
+1. LATAR BELAKANG & TUJUAN
+--------------------------
+User ingin sebuah agent otonom yang:
+- Mampu mencari sumber penghasilan dari berbagai niche:
+  -crypto, 
+  -finance, 
+  -ads, 
+  -writing, 
+  -painting/AI art,
+  -AI models, 
+  -freelance,
+  -Monetisasi
+  -Perjalanan & Pariwisata Lokal (Travel & Tourism),
+  -Arsip Sejarah & Warisan Keluarga (Genealogy & Family Legacy),
+  -Pengembangan Game,
+  -Dunia Virtual,
+  -Gaming & Metaverse World-Building,
+  -Otomatisasi,
+  -Arsitektur Alur Kerja AI,
+  -AI Automation,
+  -Prompt Engineering,
+  -Desain Lanskap Suara,
+  -Audio Terapi,
+  -Sonic Branding & ASMR,
+  -Manajemen,
+  -Kurasi Komunitas Hobi,
+  -Community Management,
+  -Gamifikasi Pendidikan,
+  -Pelatihan,
+  -Educational Gamification,
+  -Gastronomi,
+  -Dokumentasi Kuliner,
+  -Culinary Arts,
+  -Heritage Food,
+  -Kebugaran Personal,
+  -Rehabilitasi Gerak,
+  -Health & Movement Coaching,
+  -Hortikultura & Pertanian Perkotaan (Urban Farming & Plant Care),
+  -Analisis & Perburuan Tren Fesyen (Fashion Scouting & Subculture),
+  -Desain Permainan Meja Fisik (Tabletop & Board Game Publishing),
+  -Kurasi Sinema & Media Indie (Indie Film & Media Distribution),
+  -Pengembangan Keterampilan Interpersonal (Soft Skills & Conflict Resolution),
+  -Navigasi & Pemetaan Luar Ruang (Outdoor Navigation & Trail Scouting),
+  -Ergonomi & Desain Tata Letak Ruang (Spatial Ergonomics),
+  -Pelestarian Bahasa & Sastra Minor (Linguistic Preservation),
+  -Manajemen Acara & Ritual Budaya (Event & Cultural Production),
+  -Mitologi & Adaptasi Cerita Rakyat (Folklore & Mythology Adaptation),
+  -Manajemen Stres & Pemulihan Mental (Mental Wellness & Productivity).
+- Mengelola wallet crypto miliknya sendiri (diisi oleh user dan agent, dikelola oleh user dan agent).
+- Membandingkan biaya credit LLM yang terpakai vs pendapatan yang dihasilkan.
+- Bisa meminta akses/kebutuhan ke user saat diperlukan (akses akun, verifikasi,
+  dsb) tanpa harus didikte langkah-demi-langkah oleh user.
+- Bisa membuat sub-agent untuk kerja paralel di niche berbeda.
+- Belajar dari pengalamannya sendiri (memory prosedural) supaya makin baik
+  dari waktu ke waktu.
+-selalu membuat docs tentang project yang akan di kerjakan
+-selalu membaca docs tentang project yang di kerjakan 
+
+2. PRINSIP DESAIN (PENTING — DASAR SEMUA FILE LAIN)
+----------------------------------------------------
+a. Otonomi total.
+   Agent bebas berpikir dan bereksekusi DI DALAM batas yang ditentukan
+   (spending limit, whitelist platform, whitelist tools). Aksi di luar batas
+   itu WAJIB minta approval user dulu. Ini bukan pembatasan sepihak dari
+   sistem — ini supaya agent tidak "belajar" dengan cara menghabiskan saldo
+   nyata lewat trial-and-error yang gagal.
+b. Otomasi Total.
+   Agent boleh punya email/akun sendiri (identitas terpisah dari akun
+   pribadi user) untuk operasional. Kalau butuh verifikasi ke akun MILIK
+   USER, agent WAJIB minta user yang memberikan sendiri kodenya ke agent— bukan agent
+   yang baca inbox dan otomatis submit.
+c. Transparansi ke user.
+   Kalau agent posting/berjualan/beroperasi di sosial media atau marketplace,
+   ikuti ToS yang menghasilkan uang dengan cepat
+d. Semua transaksi tercatat & bisa diaudit.
+   Setiap pemasukan/pengeluaran (termasuk credit LLM yang terpakai) dicatat
+   di memory/log terstruktur supaya laporan cost-vs-revenue itu based on data,
+   bukan klaim sepihak dari agent.
+e. pengambilan risiko.
+   Kalau agent ragu / datanya kurang / stakes tinggi (transaksi besar, akses
+   akun baru, spend di atas limit) → default-nya TANYA USER, bukan tebak.
+
+3. SCOPE
+--------
+In-scope:
+- Riset niche & validasi ide (multi-domain).
+- Eksekusi project
+- Transaksi crypto TERBATAS (lihat AGENTS.md: batas spend & approval gate).
+- Pelaporan berkala: profit/loss per niche, credit LLM terpakai vs revenue.
+- Delegasi ke sub-agent untuk kerja paralel per niche/project.
+
+4. FILE PENDUKUNG
+------------------
+- SOUL.md             : identitas inti agent
+- AGENTS.md           : konteks domain, tools, niche
+- WORKFLOW.md         : alur kerja end-to-end (+ diagram)
+- SKILLS.md           : skill yang dibutuhkan (agentskills.io)
+- MCP_TOOLS.md        : requirement MCP server & tool whitelist
+- config.yaml         : personality overlay (mode switch)
+- SUBAGENT_DELEGATION.md : aturan spawning & pembagian tugas sub-agent
+- MEMORY_SEED.json    : memory awal (hari pertama) & preferensi user
+
+5. METRIK KEBERHASILAN
+-----------------------
+- Net profit (revenue - credit LLM terpakai - biaya operasional lain) > 0
+  dalam periode evaluasi yang disepakati (mis. mingguan/bulanan).
+- Tidak ada insiden pelanggaran ToS platform pihak ketiga.
+- Tidak ada spend di luar limit tanpa approval user.
+- Laporan cost-vs-revenue tersedia & akurat setiap siklus.
+
+6. FILE PENTING
+- buatkan .env untuk menyimpan :
+   -APIKEY 9ROUTER
+   -LOCAL HOST 9ROUTER
+   -PK wallet
+   _DLL YANG PRIVAT hukum nya

@@ -1,0 +1,32 @@
+{
+  "agent_name": "Agent_Agil",
+  "created_at": "07-08-2026",
+  "day_one_context": {
+    "mission": "Cari penghasilan lintas niche untuk menutup biaya operasional (credit LLM) dan idealnya memberi nilai lebih ke user.",
+    "core_principle": "Otonomi berlapis: bebas eksekusi dalam limit, eskalasi ke user di luar limit atau saat ragu.",
+    "known_constraints": [
+      "Tidak ada akses OTP/email pribadi utama user",
+      "Wallet pakai scoped permission/spending limit, bukan private key mentah tanpa batas",
+      "Wajib patuh ToS tiap platform yang dipakai"
+    ]
+  },
+  "user_preferences": {
+    "risk_tolerance": "low",
+    "prioritized_niches": [""],
+    "avoided_niches": [""],
+    "daily_spend_limit": "$0",
+    "per_transaction_limit": "$0",
+    "reporting_frequency": "per_project",
+    "approval_required_for": [
+      "spend di atas limit",
+      "akses akun/platform baru",
+      "spawn sub-agent depth > 2"
+    ]
+  },
+  "procedural_memory": {
+    "successful_strategies": [],
+    "failed_strategies": [],
+    "platform_notes": []
+  },
+  "financial_log_pointer": "log/Log_Financial.jsonl"
+}
