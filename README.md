@@ -111,3 +111,27 @@ Farhan Agil - [@farhanagil](https://github.com/farhanagil)
 
 ---
 **Agent_Agil: Cari uang, belajar, dan berkembang — secara otonom.**
+
+## English overview
+
+**Agent_Agil (Money-Hunter)** is a standalone command-line agent framework written in Python. It helps its user look for income opportunities in different niches, validate ideas, and run projects step by step from the terminal, without depending on Hermes or another platform. The agent is driven entirely through the `agent-agil` CLI, with its configuration in `config/` and its code in `src/agent_agil/`.
+
+## Features
+- **CLI-first agent** — the `agent-agil` command (defined in `pyproject.toml`, implemented in `src/agent_agil/cli/main.py`) can research a niche, list and run skills, switch personalities, show the current state and configuration, and check a wallet balance.
+- **Personality switching** — change the agent's working mode with `agent-agil switch <name>` or the `--personality` option.
+- **Modular skills** — skills are listed with `agent-agil skills` and run with `agent-agil skill <name>`; the `research` command runs the market-research skill for a given niche.
+- **Wallet check** — `agent-agil wallet` shows the configured wallet balance and the daily and per-transaction spend limits.
+- **Config-driven behaviour** — identity, personality, and limits are set in `config/` (`SOUL.md`, `AGENTS.md`, `config.yaml`, `MEMORY_SEED.json`, and `.env`).
+
+## How to run
+Requires Python 3.11 or later (`pyproject.toml`).
+
+```bash
+pip install -e .
+agent-agil
+```
+
+Run `agent-agil --help` to list the available commands, or `agent-agil` on its own to see a preview of the system prompt.
+
+---
+Built by Farhan (cryCPowr) — Kaggle: https://www.kaggle.com/farhanagilalmunzid · YouTube (CEY Studio): https://www.youtube.com/@CEYStudioID · X: https://x.com/0x_taiga
